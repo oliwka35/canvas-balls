@@ -1,28 +1,22 @@
-var canvas = document.querySelector('canvas');
+const canvas = document.querySelector('canvas');
 
 canvas.width= window.innerWidth;
 canvas.height= window.innerHeight;
 
 // c means context
-var c = canvas.getContext('2d');
+const c = canvas.getContext('2d');
 
 
 
-var mouse = {
+const mouse = {
 	x: undefined,
 	y: undefined
 }
 
-var maxRadius = 30;
-var minRadius = 2;
+const maxRadius = 30;
+const minRadius = 2;
 
-var colorArray = [
-//	'#0B3C5D',
-	//'#328CC1',
-//	'#94618E'
-//'#080808',
-//'#686868',
-//'#C0C0C0'
+const colorArray = [
 '#87CEEB',//light blue
 '#0087BD',
 '#1F305E' // teal blue
@@ -110,7 +104,7 @@ function animate(){
 	requestAnimationFrame(animate);
 	c.clearRect(0, 0, innerWidth, innerHeight);
 
-	for (var i = 0; i < circleArray.length; i++){
+	for (let i = 0; i < circleArray.length; i++){
 		circleArray[i].update();
 	}
 
